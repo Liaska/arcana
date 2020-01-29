@@ -42,9 +42,15 @@ line-height: 20px;
 
 .Header {
     position: relative;
-    background: url("../img/background_top.png") 50% 50% /cover;
+    background: url("../img/background_top.png") 40% 50% /cover;
     @include PadMar();
     
+    @media (max-width: 550px) {
+        .slide-left, .slide-right {
+            display: none;
+        }
+    }
+
     .slide-left {
       position: absolute;
       font-family: fontawesome;
@@ -114,6 +120,12 @@ line-height: 20px;
                 }
             }
         }
+
+            @media(max-width: 450px) {
+                .share, .search, .shop {
+                    display: none;
+                }
+            }
     }
 
 
@@ -125,12 +137,20 @@ line-height: 20px;
 }
 
 .menu-list {
+    max-width: 100%;
     padding-top: 25px;
-    padding-bottom: 220px;
+
+
+        @media (max-width:620px) {
+            display:none;
+        }
+
     ul {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         list-style: none;
+        max-width: 740px;
         justify-content: space-between;
         @include PadMar();
         @include SemiBold;
@@ -138,6 +158,11 @@ line-height: 20px;
         text-transform: uppercase;
         font-size: 15px;
         @include transformer();
+
+        a {
+            padding-left: 15px;
+            padding-bottom: 10px;
+        }
         li:hover {
             color:rgb(95, 95, 95);
             font-weight: 800;
@@ -148,13 +173,32 @@ line-height: 20px;
 .container_description {
     position: relative;
     max-width: 1100px;
+    display: flex;
     margin: 0 auto;
-    
+        
+    @media (max-width: 1300px){
+            justify-content: center;
+            .text {
+
+                align-content: center;
+                text-align: center;
+            }
+            button {
+                margin: 0 auto;
+            }
+        }
+
     .text {
+        padding-top: 220px;
         max-width: 365px;
         display: flex;
         flex-direction: column;
         padding-bottom: 350px;
+
+            @media(max-width:620px) {
+                padding-top: 110px;
+                padding-bottom: 175px;
+            }
 
         h1 {
             @include NormalFont();
@@ -218,6 +262,24 @@ line-height: 20px;
         padding-top: 45px;
         padding-bottom: 45px;
         
+        @media (max-width: 750px) {
+            .delivery {
+                margin: 0 20px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            flex-direction: column;
+            align-items: center;
+            .delivery {
+                margin: 0;
+                margin-bottom: 30px;
+            }
+
+            div {
+                margin-bottom: 30px;
+            }
+        }
 
         div {
             display: flex;
@@ -248,14 +310,20 @@ line-height: 20px;
         align-content: center;
         grid-template-columns: repeat(auto-fill, 440px);
         padding-bottom: 125px;
-        
-
+        image-orientation: from-image;
+        @media (max-width: 441px) {
+            grid-template-columns: repeat(auto-fill, 320px);
+            
+        }
         div {
+            text-align: center;
             position: relative;
-            max-width: 440px;
-            width: 100%;
-            height: 440px;
-            margin-bottom: 30px;
+            width: 100%; /* Ширина изображений */
+            height: 440px; /* Высота изображении */
+
+
+
+
             .clother__button {
                 position: absolute;
                 bottom: 20px;
@@ -279,19 +347,19 @@ line-height: 20px;
 }
 
 .dresses {
-    background: url("../img/Woman_1.jpg") no-repeat 100%;
+    background: url("../img/Woman_1.jpg") no-repeat 50% 100% /cover;
 }
 
 .blouses {
-    background: url("../img/Woman_2.jpg") no-repeat 100%;
+    background: url("../img/Woman_2.jpg") no-repeat 50% 100% /cover;
 }
 
 .t-shorts {
-    background: url("../img/Woman_3.jpg") no-repeat 100%;
+    background: url("../img/Woman_3.jpg") no-repeat 50% 100% /cover;
 }
 
 .outerwear {
-    background: url("../img/Woman_4.jpg") no-repeat 100%;
+    background: url("../img/Woman_4.jpg") no-repeat 50% 100% /cover;
 }
 
 
@@ -356,8 +424,8 @@ line-height: 20px;
                     border-top-color: black;
                 }
         }
-        .catalog__button:nth-child(2) {
-            margin: 0 20px;
+        .catalog__button{
+            margin: 20px 10px;
         }
 }
 
@@ -367,7 +435,16 @@ line-height: 20px;
     justify-content: center;
     grid-gap: 38px 20px;
     grid-template-columns: repeat(auto-fill, 348px);
-    
+        @media (max-width: 349px) {
+            grid-template-columns: repeat(auto-fill, 320px);
+            div .counter {
+                max-width: 320px;
+                height: auto;
+            }
+            img {
+                width: 100%
+            }
+        }
     .idiot_get_bug {
         display: flex;
         flex-direction: column;
@@ -424,6 +501,7 @@ line-height: 20px;
         height: 464px;
         border: 2px solid #f6f6f6;
         position: relative;
+        margin: 0 auto;
         @include transformer();
         img {
             @include transformer(1s);
@@ -504,8 +582,17 @@ line-height: 20px;
 .bags {
     display: flex;
     flex-direction: row;
+
+        @media (max-width:480px) {
+            flex-direction: column-reverse;
+
+            .bagDescrip {
+                margin-bottom: 50px;
+            }
+        }
+
     .bagDescrip {
-        width: 50%;
+        min-width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -517,7 +604,10 @@ line-height: 20px;
             font-size: 42px;
             padding-bottom: 32px;
             position: relative;
+            overflow-wrap: break-word;
+            text-align: center;
 
+            
             &::after {
                 position: absolute;
                 content:"";
@@ -526,18 +616,23 @@ line-height: 20px;
                 left: 50%;
                 bottom: 0px;
                 transform: translateX(-50%);
+
+                
             }
         }
 
-        p { max-width:495px;
+        p { 
+            padding-left: 25px;
+            padding-right: 25px;
+            max-width:495px;
             padding-top: 37px;
             padding-bottom: 47px;
             @include Description();
             text-align: center;
         }
 
-        button {
-            padding: 24px 45px;
+    button {
+        padding: 24px 45px;
         @include NormalFont();
         background-color: none;
         color: black;
@@ -545,6 +640,12 @@ line-height: 20px;
         text-transform: uppercase;
         border: 1px solid black;
         @include transformer();
+
+            @media (max-width: 600px) {
+                padding: 20px 30px;
+                font-size: 11px;
+            }
+
           &:hover {
               background-color:black;
               box-shadow: black 1px 1px 5px;
@@ -555,7 +656,7 @@ line-height: 20px;
     }
 
     .bagImage { 
-        width: 50%;
+        min-width: 50%;
         height:630px;
         background: url("../img/bag_and_shoes.jpg") 50% 50% /cover;
     @include transformer();
@@ -634,7 +735,7 @@ line-height: 20px;
                     p {
                         max-width: 180px;
                     }
-
+            }
                     @media (max-width: 450px) {
                         font-size: 11px;
                         
@@ -660,4 +761,3 @@ line-height: 20px;
            }
         }
     }
-}
