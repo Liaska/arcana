@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   padding: 0;
   margin: 0 auto;
@@ -10,9 +11,14 @@ a {
 
 .Header {
   position: relative;
-  background: url("../img/background_top.png") 50% 50%/cover;
+  background: url("../img/background_top.png") 40% 50%/cover;
   margin: 0 auto;
   padding: 0 10px;
+}
+@media (max-width: 550px) {
+  .Header .slide-left, .Header .slide-right {
+    display: none;
+  }
 }
 .Header .slide-left {
   position: absolute;
@@ -74,7 +80,6 @@ a {
   transition: 0.5s ease;
 }
 .header-menu p span {
-  transition: 0.5s ease;
   color: white;
 }
 .header-menu p:hover {
@@ -83,23 +88,42 @@ a {
 .header-menu p:hover span {
   color: black;
 }
+@media (max-width: 450px) {
+  .header-menu .share, .header-menu .search, .header-menu .shop {
+    display: none;
+  }
+}
+
+.share, .menu, .search, .shop {
+  padding: 2px 0;
+}
+.share:hover, .menu:hover, .search:hover, .shop:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
 .menu, .share {
-  padding-right: 20px;
+  margin-right: 20px;
 }
 
 .menu {
-  padding-bottom: 2px;
+  padding: 4px 0;
 }
 
 .menu-list {
+  max-width: 100%;
   padding-top: 25px;
-  padding-bottom: 220px;
+}
+@media (max-width: 620px) {
+  .menu-list {
+    display: none;
+  }
 }
 .menu-list ul {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   list-style: none;
+  max-width: 740px;
   justify-content: space-between;
   margin: 0 auto;
   padding: 0 10px;
@@ -111,6 +135,10 @@ a {
   font-size: 15px;
   transition: 0.5s ease;
 }
+.menu-list ul a {
+  padding-left: 15px;
+  padding-bottom: 10px;
+}
 .menu-list ul li:hover {
   color: #5f5f5f;
   font-weight: 800;
@@ -119,13 +147,33 @@ a {
 .container_description {
   position: relative;
   max-width: 1100px;
+  display: flex;
   margin: 0 auto;
 }
+@media (max-width: 1300px) {
+  .container_description {
+    justify-content: center;
+  }
+  .container_description .text {
+    align-content: center;
+    text-align: center;
+  }
+  .container_description button {
+    margin: 0 auto;
+  }
+}
 .container_description .text {
+  padding-top: 220px;
   max-width: 365px;
   display: flex;
   flex-direction: column;
   padding-bottom: 350px;
+}
+@media (max-width: 620px) {
+  .container_description .text {
+    padding-top: 110px;
+    padding-bottom: 175px;
+  }
 }
 .container_description .text h1 {
   font-family: "Montserrat", sans-serif;
@@ -189,6 +237,24 @@ a {
   padding-top: 45px;
   padding-bottom: 45px;
 }
+@media (max-width: 750px) {
+  .clothers .site__info .delivery {
+    margin: 0 20px;
+  }
+}
+@media (max-width: 550px) {
+  .clothers .site__info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .clothers .site__info .delivery {
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  .clothers .site__info div {
+    margin-bottom: 30px;
+  }
+}
 .clothers .site__info div {
   display: flex;
   flex-direction: column;
@@ -221,13 +287,21 @@ a {
   align-content: center;
   grid-template-columns: repeat(auto-fill, 440px);
   padding-bottom: 125px;
+  image-orientation: from-image;
+}
+@media (max-width: 441px) {
+  .clothers .categories {
+    grid-template-columns: repeat(auto-fill, 320px);
+  }
 }
 .clothers .categories div {
+  box-sizing: border-box;
+  text-align: center;
   position: relative;
-  max-width: 440px;
   width: 100%;
+  /* Ширина изображений */
   height: 440px;
-  margin-bottom: 30px;
+  /* Высота изображении */
 }
 .clothers .categories div .clother__button {
   position: absolute;
@@ -251,19 +325,19 @@ a {
 }
 
 .dresses {
-  background: url("../img/Woman_1.jpg") no-repeat 100%;
+  background: url("../img/Woman_1.jpg") no-repeat 50% 100%/cover;
 }
 
 .blouses {
-  background: url("../img/Woman_2.jpg") no-repeat 100%;
+  background: url("../img/Woman_2.jpg") no-repeat 50% 100%/cover;
 }
 
 .t-shorts {
-  background: url("../img/Woman_3.jpg") no-repeat 100%;
+  background: url("../img/Woman_3.jpg") no-repeat 50% 100%/cover;
 }
 
 .outerwear {
-  background: url("../img/Woman_4.jpg") no-repeat 100%;
+  background: url("../img/Woman_4.jpg") no-repeat 50% 100%/cover;
 }
 
 .text__part {
@@ -332,8 +406,8 @@ a {
 .text__part .catalog__button:hover::after {
   border-top-color: black;
 }
-.text__part .catalog__button:nth-child(2) {
-  margin: 0 20px;
+.text__part .catalog__button {
+  margin: 20px 10px;
 }
 
 .catalog {
@@ -342,6 +416,18 @@ a {
   justify-content: center;
   grid-gap: 38px 20px;
   grid-template-columns: repeat(auto-fill, 348px);
+}
+@media (max-width: 349px) {
+  .catalog {
+    grid-template-columns: repeat(auto-fill, 320px);
+  }
+  .catalog div .counter {
+    max-width: 320px;
+    height: auto;
+  }
+  .catalog img {
+    width: 100%;
+  }
 }
 .catalog .idiot_get_bug {
   display: flex;
@@ -405,6 +491,7 @@ a {
   height: 464px;
   border: 2px solid #f6f6f6;
   position: relative;
+  margin: 0 auto;
   transition: 0.5s ease;
 }
 .catalog .counter img {
@@ -482,8 +569,16 @@ a {
   display: flex;
   flex-direction: row;
 }
+@media (max-width: 480px) {
+  .bags {
+    flex-direction: column-reverse;
+  }
+  .bags .bagDescrip {
+    margin-bottom: 50px;
+  }
+}
 .bags .bagDescrip {
-  width: 50%;
+  min-width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -497,6 +592,8 @@ a {
   font-size: 42px;
   padding-bottom: 32px;
   position: relative;
+  overflow-wrap: break-word;
+  text-align: center;
 }
 .bags .bagDescrip h2::after {
   position: absolute;
@@ -508,6 +605,8 @@ a {
   transform: translateX(-50%);
 }
 .bags .bagDescrip p {
+  padding-left: 25px;
+  padding-right: 25px;
   max-width: 495px;
   padding-top: 37px;
   padding-bottom: 47px;
@@ -531,6 +630,12 @@ a {
   border: 1px solid black;
   transition: 0.5s ease;
 }
+@media (max-width: 600px) {
+  .bags .bagDescrip button {
+    padding: 20px 30px;
+    font-size: 11px;
+  }
+}
 .bags .bagDescrip button:hover {
   background-color: black;
   box-shadow: black 1px 1px 5px;
@@ -538,7 +643,7 @@ a {
   border-color: white;
 }
 .bags .bagImage {
-  width: 50%;
+  min-width: 50%;
   height: 630px;
   background: url("../img/bag_and_shoes.jpg") 50% 50%/cover;
   transition: 0.5s ease;
@@ -621,12 +726,12 @@ a {
     max-width: 180px;
   }
 }
-@media (max-width: 900px) and (max-width: 450px) {
+@media (max-width: 450px) {
   .map .mapDes .mapInfo {
     font-size: 11px;
   }
 }
-.map .mapDes .mapInfo p {
+.map .mapDes p {
   padding: 0;
   margin: 0;
   max-width: 230px;
@@ -636,9 +741,199 @@ a {
   font-size: 13px;
   color: #010101;
 }
-.map .mapDes .mapInfo p:not(:first-child) {
+.map .mapDes p:not(:first-child) {
   padding-top: 22px;
 }
-.map .mapDes .mapInfo p:first-child {
+.map .mapDes p:first-child {
   line-height: 20px;
+}
+
+/* sprite */
+.main__fotter {
+  margin: 69px auto 80px auto;
+  display: flex;
+  flex-direction: row;
+  padding: 0 15px;
+  max-width: 1100px;
+  justify-content: space-between;
+}
+.main__fotter .input__social {
+  margin-right: 30px;
+}
+.main__fotter .input__social h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #161918;
+  font-size: 24px;
+}
+.main__fotter .input__social h2 span {
+  color: white;
+}
+.main__fotter .input__social p {
+  max-width: 250px;
+  line-height: 20px;
+  margin: 37px 0px;
+  color: #929292;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+}
+.main__fotter .input__social .input__form {
+  max-width: 350px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 21px 19px;
+  border: 1px solid #dfdfdf;
+}
+.main__fotter .input__social .input__form input {
+  border: none;
+  background: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #161918;
+  font-size: 13px;
+}
+.main__fotter .input__social .input__form .sumbit {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #161918;
+  color: black;
+}
+.main__fotter .infograph {
+  position: relative;
+  max-width: 690px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.main__fotter .products p, .main__fotter .information p, .main__fotter .your__acc p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #161918;
+  font-size: 16px;
+  color: black;
+}
+.main__fotter .your__acc p {
+  margin-bottom: 0;
+}
+.main__fotter ul {
+  list-style: none;
+  padding: 0;
+}
+.main__fotter ul li {
+  color: #929292;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+}
+.main__fotter ul li:not(:last-child) {
+  padding-bottom: 20px;
+}
+.main__fotter .sprite__social {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40px;
+}
+.main__fotter .sprite__social div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(50%);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #e9e9e9;
+}
+.main__fotter .sprite__social div:not(:last-child) {
+  margin-right: 10px;
+}
+.main__fotter .sprite__social div .icon {
+  width: 15px;
+  height: 15px;
+  z-index: 2;
+  margin: 0 5px;
+  display: inline-block;
+  background: url("../img/sprites.png");
+  line-height: 15px;
+  vertical-align: middle;
+}
+.main__fotter .sprite__social div .s-2.icon {
+  background-position: -20px 0;
+}
+.main__fotter .sprite__social div .s-3.icon {
+  background-position: -39px 0;
+  width: 15px;
+  height: 14px;
+}
+.main__fotter .sprite__social div .s-1.icon {
+  background-position: 0 0;
+  width: 8px;
+  height: 14px;
+}
+.main__fotter .sprite__social div .s-4.icon {
+  background-position: -59px 0;
+  width: 13px;
+  height: 12px;
+}
+@media (max-width: 800px) {
+  .main__fotter {
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main__fotter .input__social {
+    text-align: center;
+    margin-right: 0;
+  }
+  .main__fotter .input__social h2 {
+    font-size: 30px;
+  }
+  .main__fotter .input__social p {
+    margin: 0 auto;
+  }
+  .main__fotter .input__social .sprite__social {
+    justify-content: space-between;
+  }
+  .main__fotter .input__social .input__form {
+    margin-bottom: 50px;
+  }
+  .main__fotter .infograph div {
+    max-width: 33%;
+  }
+  .main__fotter .infograph div li {
+    word-wrap: break-word;
+  }
+}
+@media (max-width: 400px) {
+  .main__fotter p {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    color: #161918;
+  }
+  .main__fotter ul {
+    display: none;
+  }
+}
+
+.payments {
+  padding: 14px 0px;
+  text-align: center;
+  background-color: black;
+}
+
+input:focus {
+  outline: none;
+}
+
+.sumbit:focus {
+  outline: 1px solid #f4f4f4;
 }
