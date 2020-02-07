@@ -15,11 +15,7 @@ a {
   margin: 0 auto;
   padding: 0 10px;
 }
-@media (max-width: 550px) {
-  .Header .slide-left, .Header .slide-right {
-    display: none;
-  }
-}
+
 .Header .slide-left {
   position: absolute;
   font-family: fontawesome;
@@ -88,11 +84,7 @@ a {
 .header-menu p:hover span {
   color: black;
 }
-@media (max-width: 450px) {
-  .header-menu .share, .header-menu .search, .header-menu .shop {
-    display: none;
-  }
-}
+
 
 .share, .menu, .search, .shop {
   padding: 2px 0;
@@ -113,11 +105,7 @@ a {
   max-width: 100%;
   padding-top: 25px;
 }
-@media (max-width: 620px) {
-  .menu-list {
-    display: none;
-  }
-}
+
 .menu-list ul {
   display: flex;
   flex-wrap: wrap;
@@ -150,18 +138,7 @@ a {
   display: flex;
   margin: 0 auto;
 }
-@media (max-width: 1300px) {
-  .container_description {
-    justify-content: center;
-  }
-  .container_description .text {
-    align-content: center;
-    text-align: center;
-  }
-  .container_description button {
-    margin: 0 auto;
-  }
-}
+
 .container_description .text {
   padding-top: 220px;
   max-width: 365px;
@@ -169,12 +146,7 @@ a {
   flex-direction: column;
   padding-bottom: 350px;
 }
-@media (max-width: 620px) {
-  .container_description .text {
-    padding-top: 110px;
-    padding-bottom: 175px;
-  }
-}
+
 .container_description .text h1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
@@ -237,24 +209,8 @@ a {
   padding-top: 45px;
   padding-bottom: 45px;
 }
-@media (max-width: 750px) {
-  .clothers .site__info .delivery {
-    margin: 0 20px;
-  }
-}
-@media (max-width: 550px) {
-  .clothers .site__info {
-    flex-direction: column;
-    align-items: center;
-  }
-  .clothers .site__info .delivery {
-    margin: 0;
-    margin-bottom: 30px;
-  }
-  .clothers .site__info div {
-    margin-bottom: 30px;
-  }
-}
+
+
 .clothers .site__info div {
   display: flex;
   flex-direction: column;
@@ -289,11 +245,7 @@ a {
   padding-bottom: 125px;
   image-orientation: from-image;
 }
-@media (max-width: 441px) {
-  .clothers .categories {
-    grid-template-columns: repeat(auto-fill, 320px);
-  }
-}
+
 .clothers .categories div {
   box-sizing: border-box;
   text-align: center;
@@ -417,18 +369,7 @@ a {
   grid-gap: 38px 20px;
   grid-template-columns: repeat(auto-fill, 348px);
 }
-@media (max-width: 349px) {
-  .catalog {
-    grid-template-columns: repeat(auto-fill, 320px);
-  }
-  .catalog div .counter {
-    max-width: 320px;
-    height: auto;
-  }
-  .catalog img {
-    width: 100%;
-  }
-}
+
 .catalog .idiot_get_bug {
   display: flex;
   flex-direction: column;
@@ -569,14 +510,7 @@ a {
   display: flex;
   flex-direction: row;
 }
-@media (max-width: 480px) {
-  .bags {
-    flex-direction: column-reverse;
-  }
-  .bags .bagDescrip {
-    margin-bottom: 50px;
-  }
-}
+
 .bags .bagDescrip {
   min-width: 50%;
   display: flex;
@@ -630,12 +564,7 @@ a {
   border: 1px solid black;
   transition: 0.5s ease;
 }
-@media (max-width: 600px) {
-  .bags .bagDescrip button {
-    padding: 20px 30px;
-    font-size: 11px;
-  }
-}
+
 .bags .bagDescrip button:hover {
   background-color: black;
   box-shadow: black 1px 1px 5px;
@@ -662,27 +591,6 @@ a {
   grid-column-gap: 140px;
   grid-row-gap: 25px;
   grid-template-columns: repeat(auto-fill, 181px);
-}
-@media (max-width: 1800px) {
-  .companies {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 100px;
-    padding: 0 25px;
-  }
-}
-@media (max-width: 720px) {
-  .companies {
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 75px;
-    padding: 25px 25px;
-  }
-}
-@media (max-width: 720px) {
-  .companies {
-    grid-template-columns: 1fr;
-    grid-column-gap: 75px;
-    padding: 25px 25px;
-  }
 }
 
 .instagram {
@@ -715,22 +623,8 @@ a {
   padding: 33px 63px 33px 40px;
   background-color: white;
 }
-@media (max-width: 900px) {
-  .map .mapDes .mapInfo {
-    padding: 20px 25px 20px 25px;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-  }
-  .map .mapDes .mapInfo p {
-    max-width: 180px;
-  }
-}
-@media (max-width: 450px) {
-  .map .mapDes .mapInfo {
-    font-size: 11px;
-  }
-}
+
+
 .map .mapDes p {
   padding: 0;
   margin: 0;
@@ -883,6 +777,56 @@ a {
   width: 13px;
   height: 12px;
 }
+
+.payments {
+  padding: 14px 0px;
+  text-align: center;
+  background-color: black;
+}
+
+input:focus {
+  outline: none;
+}
+
+.sumbit:focus {
+  outline: 1px solid #f4f4f4;
+}
+
+/* --------------- Media ------------------- */
+
+@media (max-width: 1800px) {
+  .companies {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 100px;
+    padding: 0 25px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .container_description {
+    justify-content: center;
+  }
+  .container_description .text {
+    align-content: center;
+    text-align: center;
+  }
+  .container_description button {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .map .mapDes .mapInfo {
+    padding: 20px 25px 20px 25px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  .map .mapDes .mapInfo p {
+    max-width: 180px;
+  }
+}
+
 @media (max-width: 800px) {
   .main__fotter {
     justify-content: space-between;
@@ -912,6 +856,79 @@ a {
     word-wrap: break-word;
   }
 }
+
+@media (max-width: 750px) {
+  .clothers .site__info .delivery {
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  .companies {
+    grid-template-columns: 1fr;
+    grid-column-gap: 75px;
+    padding: 25px 25px;
+  }
+}
+
+@media (max-width: 620px) {
+  .menu-list {
+    display: none;
+  }
+  .container_description .text {
+    padding-top: 110px;
+    padding-bottom: 175px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bags .bagDescrip button {
+    padding: 20px 30px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 550px) {
+  .Header .slide-left, .Header .slide-right {
+    display: none;
+  }
+  .clothers .site__info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .clothers .site__info .delivery {
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  .clothers .site__info div {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bags {
+    flex-direction: column-reverse;
+  }
+  .bags .bagDescrip {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 450px) {
+  .header-menu .share, .header-menu .search, .header-menu .shop {
+    display: none;
+  }
+  .map .mapDes .mapInfo {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 441px) {
+  .clothers .categories {
+    grid-template-columns: repeat(auto-fill, 320px);
+  }
+}
+
 @media (max-width: 400px) {
   .main__fotter p {
     text-align: center;
@@ -924,16 +941,23 @@ a {
   }
 }
 
-.payments {
-  padding: 14px 0px;
-  text-align: center;
-  background-color: black;
-}
-
-input:focus {
-  outline: none;
-}
-
-.sumbit:focus {
-  outline: 1px solid #f4f4f4;
+@media (max-width: 349px) {
+  .catalog {
+    grid-template-columns: repeat(auto-fill, 320px);
+  }
+  .catalog div .counter {
+    max-width: 320px;
+    height: auto;
+  }
+  .catalog img {
+    width: 100%;
+  }
+  .catalog .counter {
+    width: 316px;
+    height: 464px;
+    border: 2px solid #f6f6f6;
+    position: relative;
+    margin: 0 auto;
+    transition: 0.5s ease;
+  }
 }
